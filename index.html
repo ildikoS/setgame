@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SET online játék</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <h1>SET játék</h1>
+    </header>
+    <div id="kezdolap">
+        <main>
+            <h1>Set játék - nyitólap</h1>
+
+            <h2>Játékszabályzat</h2>
+            <button id="szabalyButton">Szabály</button>
+                <div id="szabalyDiv">
+                    A játék a start gomb lenyomásával kezdődik, a játékosok kiválasztására gombok szolgálnak.
+                    Ha egy játékos talált set-et, arra a gombra kattint amelyen a neve van,
+                    majd kijelöli a 3 kártyalapot és kattint egy tetszőleges kártyára. Visszalépni 3 kártya után már nincs lehetőség.
+                    Ezután a program eldönti set-e vagy sem. <br>
+                    Továbbá lehetőség van gyakorló/versenymód választására. Az egyéb beállítások eszerint jelennek meg,
+                    ha versenymódban játszana az illető, csak a 3 lap automatikus osztása működik, gyakorlómódban
+                    választható milyen gombot/gombokat szeretne a játékos. <br>
+                    További információért kattints <a href="https://fejlesztojatekvilag.hu/uploaded/set_magyar_szabaly.pdf" target="_blank">ide</a>.
+                </div>
+            <h2>Játékosok száma</h2>
+                    <input id="playersNumber" type="number" value="1" min="1" max="10" required>
+                <h4>Nevek:</h4>
+                <ul id="players">
+                    <li>1. Játékos neve</li>
+                    <input type="text" value="Játékos1">
+                </ul>
+            <h2>Játék módja</h2>
+                    <input type="radio" id="gyakorlo" name="verseny" value="gyakorlo" checked> Gyakorló
+                    <input type="radio" id="verseny" name="verseny" value="verseny"> Verseny
+
+                <div id="egyebBeallitas">
+                    <h2>Egyéb beállítások</h2>
+                    Lekérése annak, van-e SET a leosztásban:
+                        <input id="vanSet" type="checkbox"> <br>
+                    SET lekérése a leosztásban: 
+                        <input id="lekeres" type="checkbox"> <br>
+                    +3 lapos kiegészítés: 
+                        <input id="kiegeszites" type="checkbox"> <br>
+                </div>
+                <br>
+
+            <button id="start">START</button>
+        </main>
+    </div>
+
+    <div id="jatek">
+        <main>
+            <div id="menu" style="float: left">
+                <div id="egyebGombok"></div>
+
+                <h4>Idő:</h4> <label id="seconds"></label>
+                <ul id="pontszamok"></ul>
+                    
+                <h4>Játékosok:</h4>
+                <div id="jatekosGomb"></div>
+
+                <p id="setJelzese"></p>
+                
+            </div>
+            
+            <table id="cards" style="margin: auto">
+            </table>
+        </main>
+    </div>
+    <div id="vege" style="text-align: center;">
+        <main>
+            <form>
+                <div id="vegePontszamok"></div><br>
+                <div id="osszesitett"></div>
+                <button id="visszalep">Kezdőlapra ugrás</button>
+            </form>
+        </main>
+    </div>
+    
+</body>
+    <script src="script.js"></script> 
+</html>
